@@ -19,13 +19,15 @@
     "typecheck": "tsc --noEmit",
     "ci": "pnpm lint && pnpm test && pnpm typecheck",
     "publish:all": "pnpm -r publish",
-    "changeset": "changeset",
-    "version": "changeset version",
-    "release": "pnpm build && changeset publish"
+    "version": "auto version",
+    "release": "pnpm build && auto shipit"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.1",
+    "@auto-it/conventional-commits": "^11.3.0",
+    "@auto-it/npm": "^11.3.0",
+    "@auto-it/released": "^11.3.0",
     "@types/node": "^24.6.2",
+    "auto": "^11.3.0",
     "prettier": "^3.2.5",
     "typescript": "^5.9.3"
   },

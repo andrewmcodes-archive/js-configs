@@ -63,29 +63,22 @@ pnpm lint
 pnpm format
 ```
 
-### Creating a Changeset
+### Creating a PR with Labels
 
-When you make changes that should be included in a release, create a changeset:
+When you make changes that should be included in a release, add appropriate labels to your PR:
 
-```bash
-pnpm changeset
-```
+#### Version Labels
 
-This will:
+Use these labels to indicate the type of release:
 
-1. Ask which packages have changed
-2. Ask what type of version bump is needed (major, minor, patch)
-3. Prompt you to write a summary of the changes
+- **major** - Breaking changes (1.0.0 → 2.0.0)
+- **minor** - New features, backwards compatible (1.0.0 → 1.1.0)
+- **patch** - Bug fixes, backwards compatible (1.0.0 → 1.0.1)
+- **skip-release** - Skip creating a release for this PR
+- **internal** - Internal changes (no release)
+- **documentation** - Documentation changes (no release)
 
-The changeset will be included in your PR and used during the release process.
-
-#### Version Bump Guidelines
-
-Follow [Semantic Versioning](https://semver.org/):
-
-- **Major** (1.0.0 → 2.0.0): Breaking changes
-- **Minor** (1.0.0 → 1.1.0): New features, backwards compatible
-- **Patch** (1.0.0 → 1.0.1): Bug fixes, backwards compatible
+Follow [Semantic Versioning](https://semver.org/) when choosing the appropriate label.
 
 ### Submitting a Pull Request
 
@@ -97,9 +90,11 @@ git push origin feature/your-feature-name
 
 2. Open a Pull Request on GitHub
 
-3. Ensure all CI checks pass
+3. Add the appropriate version label to your PR
 
-4. Wait for review from maintainers
+4. Ensure all CI checks pass
+
+5. Wait for review from maintainers
 
 ## Package Structure
 
@@ -256,12 +251,12 @@ chore: update dependencies
 
 ## Release Process
 
-Releases are automated using Changesets and GitHub Actions:
+Releases are automated using Auto and GitHub Actions:
 
-1. Merge PRs with changesets to `main`
-2. GitHub Actions will create a "Version Packages" PR
-3. Merge the "Version Packages" PR
-4. Packages will be automatically published to npm
+1. Create a PR with your changes
+2. Add a version label to your PR (major, minor, patch, etc.)
+3. Merge your PR to `main`
+4. Auto will automatically create a release and publish to npm
 
 ### Manual Release (if needed)
 

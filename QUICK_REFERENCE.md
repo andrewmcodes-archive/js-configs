@@ -34,14 +34,8 @@ npm run ci
 ### Versioning
 
 ```bash
-# Create a changeset
-pnpm changeset
-
-# Version packages (apply changesets)
+# Calculate version bumps (based on PR labels)
 pnpm version
-
-# Check changeset status
-pnpm changeset status
 ```
 
 ### Publishing
@@ -100,6 +94,7 @@ Each package has these scripts available:
 ### CI Workflow
 
 Runs on every push and PR:
+
 - Lints all packages
 - Tests all packages
 - Builds all packages
@@ -107,8 +102,9 @@ Runs on every push and PR:
 ### Release Workflow
 
 Runs on push to main:
-- Creates/updates a "Version Packages" PR if there are changesets
-- Publishes packages to npm when the PR is merged
+
+- Uses Auto to create releases based on PR labels
+- Publishes packages to npm automatically
 
 ## Troubleshooting
 
@@ -126,17 +122,17 @@ pnpm install
 pnpm list -r
 ```
 
-### Verify changeset configuration
+### Verify Auto configuration
 
 ```bash
-cat .changeset/config.json
+cat .autorc
 ```
 
 ## File Structure
 
 ```
 js-configs/
-├── .changeset/           # Changesets configuration and pending changes
+├── .autorc               # Auto configuration
 ├── .github/workflows/    # GitHub Actions workflows
 ├── packages/
 │   ├── commitlint-config/

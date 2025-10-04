@@ -42,8 +42,7 @@ pnpm install
 - `pnpm format` - Format all files with Prettier
 - `pnpm typecheck` - Type check with JSDoc annotations
 - `pnpm ci` - Run lint, test, and typecheck (used in CI)
-- `pnpm changeset` - Create a new changeset for versioning
-- `pnpm version` - Version packages based on changesets
+- `pnpm version` - Calculate version bumps based on PR labels
 - `pnpm release` - Build and publish packages
 
 ### Package-Specific Commands
@@ -60,30 +59,22 @@ pnpm --filter @andrewmcodes/commitlint-config lint
 
 ## 🔄 Versioning & Publishing
 
-This monorepo uses [Changesets](https://github.com/changesets/changesets) for version management and publishing.
+This monorepo uses [Auto](https://intuit.github.io/auto/) for version management and publishing.
 
-### Creating a Changeset
+### Release Process
 
-When you make changes to a package, create a changeset:
+Publishing is automated via GitHub Actions and PR labels:
 
-```bash
-pnpm changeset
-```
-
-Follow the prompts to:
-
-1. Select which packages have changed
-2. Choose the type of version bump (major, minor, patch)
-3. Write a summary of the changes
-
-### Publishing Packages
-
-Publishing is automated via GitHub Actions:
-
-1. Merge your PR with changesets to the `main` branch
-2. The Release workflow will create a "Version Packages" PR
-3. Merge the "Version Packages" PR
-4. Packages will be automatically published to npm
+1. Create a PR with your changes
+2. Add a label to the PR to indicate the type of release:
+   - `major` - Breaking changes (1.0.0 → 2.0.0)
+   - `minor` - New features (1.0.0 → 1.1.0)
+   - `patch` - Bug fixes (1.0.0 → 1.0.1)
+   - `skip-release` - Skip creating a release
+   - `internal` - Internal changes (no release)
+   - `documentation` - Documentation changes (no release)
+3. Merge your PR to the `main` branch
+4. Auto will automatically create a release and publish to npm
 
 ### Manual Publishing
 
@@ -96,7 +87,7 @@ pnpm release
 This will:
 
 1. Build all packages
-2. Publish changed packages to npm
+2. Create releases and publish changed packages to npm
 
 ## 🤝 Contributing
 
@@ -107,8 +98,8 @@ Contributions are welcome! Please follow these guidelines:
 3. Make your changes
 4. Add tests if applicable
 5. Run `pnpm ci` to ensure everything passes
-6. Create a changeset with `pnpm changeset`
-7. Submit a pull request
+6. Submit a pull request
+7. Add appropriate labels to your PR (major, minor, patch, etc.)
 
 ### Code Style
 
