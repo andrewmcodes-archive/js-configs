@@ -1,0 +1,27 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build outputs
+dist
+build
+*.tsbuildinfo
+
+# Lock files
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Coverage
+coverage
+.nyc_output
+
+# Logs
+*.log
+
+# Changesets
+.changeset/*.md
+!.changeset/README.md
+
+# Markdown files that should preserve their formatting
+CHANGELOG.md
