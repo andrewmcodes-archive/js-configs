@@ -144,6 +144,85 @@ pnpm lint
 pnpm format
 ```
 
+### Type Safety with JSDoc
+
+We use JSDoc comments and TypeScript's type checking to improve code quality and developer experience without requiring a build step.
+
+#### Adding Type Annotations
+
+All configuration entry files should include:
+
+1. **Type checking directive** at the top of the file:
+
+```javascript
+// @ts-check
+```
+
+2. **JSDoc type annotations** for exported configurations:
+
+**Prettier configuration:**
+
+```javascript
+// @ts-check
+
+/** @type {import("prettier").Config} */
+const config = {
+  printWidth: 120,
+};
+
+module.exports = config;
+```
+
+**Commitlint configuration:**
+
+```javascript
+// @ts-check
+
+/** @type {import("@commitlint/types").UserConfig} */
+const config = {
+  extends: ["@commitlint/config-conventional"],
+  rules: {
+    // ...
+  },
+};
+
+module.exports = config;
+```
+
+**ESLint configuration (flat config):**
+
+```javascript
+// @ts-check
+
+/** @type {import("eslint").Linter.FlatConfig[]} */
+const config = [
+  // ...
+];
+
+module.exports = config;
+```
+
+#### Validating Types
+
+Before committing, validate your JSDoc types:
+
+```bash
+# Install TypeScript if not already installed
+pnpm add -Dw typescript
+
+# Run type checking
+pnpm exec tsc --noEmit
+```
+
+This will check all JavaScript files with `// @ts-check` for type errors without emitting any files.
+
+#### Benefits
+
+- **IntelliSense**: Get autocomplete and inline documentation in your editor
+- **Type Safety**: Catch configuration errors before runtime
+- **Documentation**: JSDoc comments serve as inline documentation
+- **No Build Step**: Works directly with JavaScript files
+
 ### Commit Messages
 
 We follow [Conventional Commits](https://www.conventionalcommits.org/):

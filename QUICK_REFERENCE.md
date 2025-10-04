@@ -21,10 +21,13 @@ pnpm lint
 # Format all files
 pnpm format
 
+# Type check with JSDoc annotations
+pnpm typecheck
+
 # Build all packages
 pnpm build
 
-# Run CI checks (lint + test)
+# Run CI checks (lint + test + typecheck)
 npm run ci
 ```
 

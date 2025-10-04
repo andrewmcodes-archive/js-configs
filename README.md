@@ -40,7 +40,8 @@ pnpm install
 - `pnpm test` - Run tests for all packages
 - `pnpm lint` - Lint all packages
 - `pnpm format` - Format all files with Prettier
-- `pnpm ci` - Run lint and test (used in CI)
+- `pnpm typecheck` - Type check with JSDoc annotations
+- `pnpm ci` - Run lint, test, and typecheck (used in CI)
 - `pnpm changeset` - Create a new changeset for versioning
 - `pnpm version` - Version packages based on changesets
 - `pnpm release` - Build and publish packages
