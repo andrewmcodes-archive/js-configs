@@ -12,22 +12,26 @@ Thank you for your interest in contributing to js-configs! This document provide
 ### Setup
 
 1. Fork and clone the repository:
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/js-configs.git
 cd js-configs
 ```
 
 2. Install pnpm if you don't have it:
+
 ```bash
 npm install -g pnpm
 ```
 
 3. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 4. Run tests to ensure everything is working:
+
 ```bash
 pnpm test
 ```
@@ -37,6 +41,7 @@ pnpm test
 ### Making Changes
 
 1. Create a new branch for your feature or fix:
+
 ```bash
 git checkout -b feature/your-feature-name
 ```
@@ -46,11 +51,13 @@ git checkout -b feature/your-feature-name
 3. Add tests for your changes
 
 4. Run the test suite:
+
 ```bash
 pnpm test
 ```
 
 5. Ensure your code follows our style guide:
+
 ```bash
 pnpm lint
 pnpm format
@@ -65,6 +72,7 @@ pnpm changeset
 ```
 
 This will:
+
 1. Ask which packages have changed
 2. Ask what type of version bump is needed (major, minor, patch)
 3. Prompt you to write a summary of the changes
@@ -82,6 +90,7 @@ Follow [Semantic Versioning](https://semver.org/):
 ### Submitting a Pull Request
 
 1. Push your changes to your fork:
+
 ```bash
 git push origin feature/your-feature-name
 ```
@@ -148,6 +157,7 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 ```
 
 Types:
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
@@ -157,6 +167,7 @@ Types:
 - `chore`: Build process or auxiliary tool changes
 
 Examples:
+
 ```
 feat(prettier-config): add new formatting rule
 fix(commitlint-config): resolve rule conflict
