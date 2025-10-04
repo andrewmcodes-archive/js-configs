@@ -1,0 +1,44 @@
+{
+  "name": "@andrewmcodes/commitlint-config",
+  "version": "0.1.2",
+  "description": "Personal commitlint config for @andrewmcodes",
+  "license": "MIT",
+  "author": "Andrew Mason (https://andrewm.codes)",
+  "homepage": "https://github.com/andrewmcodes/js-configs/tree/main/packages/commitlint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewmcodes/js-configs.git",
+    "directory": "packages/commitlint-config"
+  },
+  "bugs": "https://github.com/andrewmcodes/js-configs/issues",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "echo 'No build step required'",
+    "test": "jest",
+    "lint": "prettier --check ./src"
+  },
+  "dependencies": {
+    "@commitlint/config-conventional": "^18.6.0"
+  },
+  "devDependencies": {
+    "@andrewmcodes/prettier-config": "workspace:*",
+    "@commitlint/lint": "^18.6.0",
+    "@commitlint/types": "^18.6.0",
+    "commitlint": "^18.6.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-jsdoc": "^1.3.0"
+  },
+  "keywords": [
+    "andrewmcodes",
+    "commitlint",
+    "commitlint-config",
+    "config"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
