@@ -1,0 +1,51 @@
+{
+  "plugins": [
+    "npm",
+    "conventional-commits",
+    "released"
+  ],
+  "author": "Andrew Mason <andrew@andrewm.codes>",
+  "baseBranch": "main",
+  "labels": [
+    {
+      "name": "major",
+      "changelogTitle": "💥 Breaking Change",
+      "description": "Increment the major version when merged",
+      "releaseType": "major"
+    },
+    {
+      "name": "minor",
+      "changelogTitle": "🚀 Enhancement",
+      "description": "Increment the minor version when merged",
+      "releaseType": "minor"
+    },
+    {
+      "name": "patch",
+      "changelogTitle": "🐛 Bug Fix",
+      "description": "Increment the patch version when merged",
+      "releaseType": "patch"
+    },
+    {
+      "name": "skip-release",
+      "description": "Skip creating a release for this pull request",
+      "releaseType": "skip"
+    },
+    {
+      "name": "release",
+      "description": "Create a release when this pr is merged",
+      "releaseType": "release"
+    },
+    {
+      "name": "internal",
+      "changelogTitle": "🏠 Internal",
+      "description": "Changes only affect the internal API",
+      "releaseType": "none"
+    },
+    {
+      "name": "documentation",
+      "changelogTitle": "📝 Documentation",
+      "description": "Changes only affect documentation",
+      "releaseType": "none"
+    }
+  ]
+}

@@ -11,7 +11,7 @@ This file tracks changes to the monorepo infrastructure itself. For package-spec
 ### Added
 
 - Initial monorepo setup with pnpm workspaces
-- Changesets for version management and publishing
+- Auto for version management and publishing
 - GitHub Actions workflows for CI and automated releases
 - Root-level scripts for building, testing, linting, and publishing
 - Comprehensive documentation
